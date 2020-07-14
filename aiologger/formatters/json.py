@@ -141,7 +141,7 @@ class ExtendedJsonFormatter(JsonFormatter):
         if record.flatten and isinstance(record.msg, dict):
             msg.update(record.msg)
         else:
-            msg[MSG_FIELDNAME] = record.msg
+            msg[self.default_msg_fieldname] = record.msg
 
         if record.extra:
             msg.update(record.extra)
